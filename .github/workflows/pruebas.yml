@@ -13,6 +13,12 @@ jobs:
     - name: Checkout código fuente
       uses: actions/checkout@v2
 
+      
+    - name: Configurar Git
+      run: |
+        git config --global user.email "vampero18@gmail.com"
+        git config --global user.name "vampi28"
+
     - name: Configurar Node.js
       uses: actions/setup-node@v2
       with:
@@ -29,8 +35,6 @@ jobs:
       run: |
         git add .
         git commit -m "Agregando archivos no rastreados"
-        git config --global user.email "vampero18@gmail.com"
-        git config --global user.name "vampi28"
         git checkout -b main
         git commit -am "Copia de rama con pruebas exitosas"
         git push origin main
