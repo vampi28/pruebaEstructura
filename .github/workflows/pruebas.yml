@@ -31,14 +31,12 @@ jobs:
   #  - name: Ejecutar pruebas
   #    run: npm test
 
-    - name: Si pasa las pruebas ejecuta una segunda
-      if: success()
-      steps:
-        - name: Incluir Flujo de Trabajo 1
-          uses: actions/checkout@v2
-          with:
-            ref: development
-        - name: Flujo de Trabajo 1
-          run: echo "Ejecutando Flujo de Trabajo 1"
+  conditional_job:
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Si pasa las pruebas ejecuta una segunda
+        run: echo "Ejecutando este paso si el trabajo anterior tuvo éxito"
 
 
