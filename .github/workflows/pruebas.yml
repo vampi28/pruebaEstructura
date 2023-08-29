@@ -27,10 +27,10 @@ jobs:
     - name: Clonar a otra rama si las pruebas pasan
       if: success()
       run: |
-        git add .
-        git commit -m "Agregando archivos no rastreados"
         git config user.name "vampi28"
         git config user.email "vampero18@gmail.com"
+        git add .
+        git commit -m "Agregando archivos no rastreados"
         git checkout -b main
         git commit -am "Copia de rama con pruebas exitosas"
         git push origin main
