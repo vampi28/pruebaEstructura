@@ -1,9 +1,9 @@
 name: Pruebas Automáticas y Clonado
 
 on:
-  pull_request:
-    branches:
-      - development
+    push:
+      branches:
+        - development
 
 jobs:
   build_and_clone:
