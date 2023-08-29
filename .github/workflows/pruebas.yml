@@ -33,7 +33,7 @@ jobs:
       if: success()
       run: |
         git checkout main
-        git cherry-pick development
+        git merge development --no-edit
         git push origin main
 
 
