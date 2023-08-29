@@ -32,6 +32,8 @@ jobs:
     - name: Clonar a otra rama si las pruebas pasan
       if: success()
       run: |
-        git checkout -b main
-        git commit -am "Copia de rama con pruebas exitosas"
+        git checkout main
+        git cherry-pick development
         git push origin main
+
+
