@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout código fuente
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Configurar Git
       run: |
@@ -19,9 +19,9 @@ jobs:
         git config --global user.name "vampi28"
 
     - name: Configurar Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '18'
 
     - name: Instalar dependencias
       run: npm install
@@ -31,11 +31,14 @@ jobs:
   #  - name: Ejecutar pruebas
   #    run: npm test
 
-    - name: Clonar a otra rama si las pruebas pasan
+    - name: Si pasa las pruebas ejecuta una segunda
       if: success()
-      run: |
-        git checkout  origin/main
-        git merge development --no-edit
-        git pull origin/main
+      steps:
+        - name: Incluir Flujo de Trabajo 1
+          uses: actions/checkout@v2
+          with:
+            ref: development
+        - name: Flujo de Trabajo 1
+          run: echo "Ejecutando Flujo de Trabajo 1"
 
 
