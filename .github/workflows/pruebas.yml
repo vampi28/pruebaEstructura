@@ -34,8 +34,8 @@ jobs:
     - name: Clonar a otra rama si las pruebas pasan
       if: success()
       run: |
-        git checkout main
+        git checkout  origin/main
         git merge development --no-edit
-        git pull origin main
+        git pull origin/main
 
 
