@@ -21,10 +21,14 @@ jobs:
     - name: Instalar dependencias
       run: npm install
 
+  #  - name: Ejecutar pruebas
+  #    run: npm test
 
     - name: Clonar a otra rama si las pruebas pasan
       if: success()
       run: |
+        git add .
+        git commit -m "Agregando archivos no rastreados"
         git config user.name "Automatización de Pruebas"
         git config user.email "diego@diego.com"
         git checkout -b main
