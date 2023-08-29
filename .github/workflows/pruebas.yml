@@ -29,8 +29,8 @@ jobs:
       run: |
         git add .
         git commit -m "Agregando archivos no rastreados"
-        git config user.name "Automatización de Pruebas"
-        git config user.email "diego@diego.com"
+        git config user.name "vampi28"
+        git config user.email "vampero18@gmail.com"
         git checkout -b main
         git commit -am "Copia de rama con pruebas exitosas"
         git push origin main
