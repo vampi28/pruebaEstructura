@@ -26,6 +26,8 @@ jobs:
     - name: Instalar dependencias
       run: npm install
 
+    - run: git branch -r
+
   #  - name: Ejecutar pruebas
   #    run: npm test
 
